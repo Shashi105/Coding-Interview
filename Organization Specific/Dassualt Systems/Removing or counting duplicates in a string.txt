@@ -1,0 +1,34 @@
+* using filter and array:
+
+Removing:
+function removeStringDup(str){
+    var finalStr="";
+   var filteredArr=[...str.toUpperCase()].filter((item,index)=>{
+     if([...str.toUpperCase()].indexOf(item)==index){
+       return item;
+     }
+   });
+
+  filteredArr.forEach((item)=>{
+      finalStr+=item;
+   })
+  return finalStr
+}
+
+console.log(removeStringDup("Shashi"));
+
+Counting:
+
+function removeStringDup(str){
+   var finalCount={};
+   var tempStrArr=  [...(str.toUpperCase())];
+  tempStrArr.forEach((ele)=>{
+    if(tempStrArr.includes(ele)){
+      finalCount[ele]=finalCount[ele]===undefined?1:finalCount[ele]+1;
+    }   
+  })
+    return( finalCount)
+}
+
+console.log(removeStringDup("Shashsddsdsqadswdwqdwefdewdwedwdwddi"));
+

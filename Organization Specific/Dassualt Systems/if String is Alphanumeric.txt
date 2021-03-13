@@ -1,0 +1,28 @@
+*  Using Regex:
+
+function checkAlphaNumericUsingRegex(inputString){
+  const regex=/^([0-9]|[a-z])+([0-9a-z]+)$/i;
+  return regex.test(inputString)
+}
+
+checkAlphaNumericUsingRegex("777");
+
+* Without Regex:
+
+function checkAlphaNumeric(stringCheck){
+  var len,code;
+  for(let i=0,len=stringCheck.length;i<len;i++){
+    code=stringCheck.charCodeAt(i);
+    if(!(code>47 && code <58)  && // numeric (0-9)
+       !(code>64 && code <91)  &&   // upper alpha (A-Z)
+       !(code>96 && code <123) // lower alpha (a-z)
+      )
+      {
+        return false;
+      }  
+  }
+  return true;
+}
+
+
+console.log(checkAlphaNumeric("Shashi7777@"));

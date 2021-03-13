@@ -1,0 +1,24 @@
+function removeStringDup(str){
+   var finalCount={};
+  var tempArr=[];
+  var finalResult="";
+   var tempStrArr=  [...(str.toUpperCase())];
+  tempStrArr.forEach((ele)=>{
+    if(tempStrArr.includes(ele)){
+      finalCount[ele]=finalCount[ele]===undefined?1:finalCount[ele]+1;
+    }   
+  })
+ 
+  console.log(finalCount);
+   Object.keys(finalCount).forEach((ele)=>{
+      if(finalCount[ele]===Math.max.apply(null,Object.values(finalCount))){
+       finalResult+=ele;
+        
+     }
+   })
+  
+   return [...finalResult].sort((a,b)=>a.charCodeAt()-b.charCodeAt())[0];
+  
+}
+
+console.log(removeStringDup("Shashsddsdsqadswdwqdwefdewdwedwdwddi"));

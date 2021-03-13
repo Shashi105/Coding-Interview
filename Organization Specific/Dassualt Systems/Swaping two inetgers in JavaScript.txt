@@ -1,0 +1,43 @@
+// using temp variable
+
+var a=10;
+var b=20;
+var temp;
+
+temp=a;
+a=b
+b=temp;
+
+console.log(a,b)
+
+// using ES6 Destructuring
+
+var a=10;
+var b=20;
+[a,b]=[b,a];
+console.log(a,b)
+
+// using arithmetic operation
+
+var a=10;
+var b=20;
+
+a=b+a;
+b=a-b;
+a=a-b;
+
+console.log(a,b)
+
+
+
+
+// using bitwise operator
+
+var a=10;
+var b=20;
+
+a=a^b;
+b=a^b;
+a=a^b;
+
+console.log(a,b)

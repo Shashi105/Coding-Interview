@@ -1,0 +1,45 @@
+* Using indexOf and another Array:
+function removeDuplicaterArr(arr){
+  var tempArr=[];
+  arr.forEach((ele)=>{
+    console.log(ele)
+    console.log(tempArr.indexOf(ele))
+    if((tempArr.indexOf(ele)===-1)){
+      tempArr.push(ele);
+    } 
+  })
+  return tempArr;
+}
+
+console.log(removeDuplicaterArr([1,2,5,2,2,3,5]));
+
+
+
+NOTE: tempArr.indexOf(ele) gives -1 if element doesn't exist in array
+
+
+* Using includes and another array:
+
+function removeDuplicaterArr(arr){
+  var tempArr=[];
+  arr.forEach((ele)=>{
+    if(!tempArr.includes(ele)){
+      tempArr.push(ele);
+    } 
+  })
+  return tempArr;
+}
+
+console.log(removeDuplicaterArr([1,2,5,2,2,3,5]));
+
+* Using Filter:
+
+function removeDuplicaterArr(arr){
+  var tempArr=arr.filter((item,index)=>{
+    if(arr.indexOf(item)==index){
+      return item;
+    }});                     
+  return tempArr;
+}
+
+console.log(removeDuplicaterArr([1,2,5,2,2,3,5]))
